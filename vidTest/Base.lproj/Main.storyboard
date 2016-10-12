@@ -126,6 +126,16 @@
             </objects>
             <point key="canvasLocation" x="-880" y="15"/>
         </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="XH5-7t-D2u">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="MXB-N3-mhU" customClass="VIDPlayerViewController" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vtu-44-0Ht" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-314" y="15"/>
+        </scene>
         <!--Feed Table View Controller-->
         <scene sceneID="GGo-px-nsF">
             <objects>

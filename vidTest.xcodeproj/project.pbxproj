@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE0947941DAE53BA0053CA33 /* VIDPlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE0947931DAE53BA0053CA33 /* VIDPlayerViewController.m */; };
 		FECE9FAB1D8C5A8900F26C3A /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECE9F8A1D8C5A8900F26C3A /* AFHTTPSessionManager.m */; };
 		FECE9FAC1D8C5A8900F26C3A /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FECE9F8D1D8C5A8900F26C3A /* AFNetworkReachabilityManager.m */; };
 		FECE9FAD1D8C5A8900F26C3A /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FECE9F8F1D8C5A8900F26C3A /* AFSecurityPolicy.m */; };
@@ -48,6 +49,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE0947921DAE53BA0053CA33 /* VIDPlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VIDPlayerViewController.h; sourceTree = "<group>"; };
+		FE0947931DAE53BA0053CA33 /* VIDPlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VIDPlayerViewController.m; sourceTree = "<group>"; };
 		FECE9F891D8C5A8900F26C3A /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
 		FECE9F8A1D8C5A8900F26C3A /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
 		FECE9F8B1D8C5A8900F26C3A /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
@@ -288,6 +291,8 @@
 				FEFC56A61D7F001D00199079 /* FeatureViewController.m */,
 				FEFC56AB1D7F027200199079 /* NewViewController.h */,
 				FEFC56AC1D7F027200199079 /* NewViewController.m */,
+				FE0947921DAE53BA0053CA33 /* VIDPlayerViewController.h */,
+				FE0947931DAE53BA0053CA33 /* VIDPlayerViewController.m */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -385,6 +390,7 @@
 				FEF3209A1D7FFEF8006A7F73 /* User.m in Sources */,
 				FECE9FAD1D8C5A8900F26C3A /* AFSecurityPolicy.m in Sources */,
 				FEF240791D7E952D0050FA50 /* AppDelegate.m in Sources */,
+				FE0947941DAE53BA0053CA33 /* VIDPlayerViewController.m in Sources */,
 				FEFC066E1D80362A00DE420C /* AccessToken.m in Sources */,
 				FECE9FBF1D8C601400F26C3A /* LoginViewController.m in Sources */,
 				FECE9FB71D8C5A8900F26C3A /* UIProgressView+AFNetworking.m in Sources */,
