@@ -7,12 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <AVKit/AVKit.h>
-#import <AVFoundation/AVFoundation.h>
 
+#import "Video.h"
+static NSString* const kTableViewCellIdentifier = @"cellIdentifier";
 
 @interface TableViewCell : UITableViewCell
 
-@property (strong, nonatomic) AVPlayer *player;
+@property (weak, nonatomic) IBOutlet UIImageView *imageVideo;
+@property (weak, nonatomic) IBOutlet UILabel *videoNameLable;
+
+
+- (void)processVideo:(Video*)video;
+
+
+
 
 @end
+

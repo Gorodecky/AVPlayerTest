@@ -17,6 +17,7 @@
 @interface ServerManager()
 
 
+
 //@property (strong, nonatomic) AFHTTPRequestOperationManager* requestOperationManager;
 @property (strong, nonatomic) AccessToken* accessToken;
 
@@ -34,7 +35,7 @@
         
         manager = [[ServerManager alloc] init];
     });
-
+    
     return manager;
 }
 
@@ -43,7 +44,7 @@
     self = [super init];
     if (self) {
         
-     //   NSURL* url = [NSURL URLWithString:@"https://api.vid.me/auth/create"];
+        //   NSURL* url = [NSURL URLWithString:@"https://api.vid.me/auth/create"];
         
     }
     
@@ -74,18 +75,17 @@
                   [videos addObject:videoInfo];
                   
               }
-        }
+          }
           
-          NSLog(@"%@",videos);
+         // NSLog(@"%@",videos);
           
           succes(videos);
-      
+          
           
       } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
           
           NSLog(@"Error: %@ %@",error, task);
       }];
-    
 }
 
 

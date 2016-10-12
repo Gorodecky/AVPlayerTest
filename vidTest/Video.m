@@ -14,12 +14,14 @@
     self = [super init];
     
     if (self) {
+        
         self.videoName = responseObject [@"title"];
         self.videoLikeCount = [responseObject [@""]integerValue];
         self.videoURL = responseObject [@"clip_url"];
         self.videoHeight =  [responseObject [@"height"]integerValue];
         self.videoWith = [responseObject [@"width"]integerValue];
-        
+        self.videoImageURl = responseObject [@"thumbnail_url"];
+               
     }
     
     return self;

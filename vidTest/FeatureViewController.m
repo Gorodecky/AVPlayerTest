@@ -9,10 +9,11 @@
 #import "FeatureViewController.h"
 #import "AFNetworking.h"
 #import "ServerManager.h"
+#import "TableViewCell.h"
 
-@interface FeatureViewController ()
+@interface FeatureViewController () <UITableViewDelegate, UITableViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UIActivityIndicatorView* indicator;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @property (strong, nonatomic) NSArray* arrayVideo;
 
@@ -21,37 +22,23 @@
 @implementation FeatureViewController
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
-
     
-    [self getRequest];
-    // Do any additional setup after loading the view.
-}
-
--(void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
+    UINib* nibCell= [UINib nibWithNibName:@"TableViewCell" bundle:nil];
     
-
-}
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-
-
-- (void) getRequest {
+    
+    
+    [[self tableView] registerNib:nibCell
+           forCellReuseIdentifier:kTableViewCellIdentifier];
+    
     
     NSString* string = @"feature";
- 
+    
     [[ServerManager sharedManager] videosGET:string onSucces:^(NSArray *videos) {
         
         if (videos == 0) {
             
-            //ahtung
-
             NSLog(@"Alert feature");
             
         } else {
@@ -60,12 +47,55 @@
             
             NSLog(@"Self.videos = %@",self.arrayVideo);
             
+            [self.tableView reloadData];
         }
         
     } onFailure:^(NSError *error, NSInteger statusCode) {
         //Alert
         NSLog(@"Alert feature");
     }];
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+}
+
+
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
+}
+
+#pragma mark UITableViewDataSource
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.arrayVideo.count;
+}
+
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    TableViewCell* cell = (TableViewCell*)[tableView dequeueReusableCellWithIdentifier:kTableViewCellIdentifier];
+    
+    if (!cell) {
+        NSArray*nib = [[NSBundle mainBundle] loadNibNamed:@"TableViewCell"
+                                                    owner:self
+                                                  options:nil];
+        
+        cell = [nib objectAtIndex:0];
+    }
+    
+    Video* video = [self.arrayVideo objectAtIndex:indexPath.row];
+    [cell processVideo:video];
+    
+    return cell;
+    
+}
+
+#pragma mark UITableViewDelegate
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    return 100;
 }
 
 /*

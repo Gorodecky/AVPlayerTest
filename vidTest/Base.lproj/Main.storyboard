@@ -18,19 +18,20 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="C6H-DT-9xQ">
-                                <rect key="frame" x="197" y="358" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="jPw-mt-AXi">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="687"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="KMJ-u6-2t9" id="9fA-sI-9Xg"/>
+                                    <outlet property="delegate" destination="KMJ-u6-2t9" id="AxQ-Pd-6AB"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="C6H-DT-9xQ" firstAttribute="centerY" secondItem="G6X-AC-KSw" secondAttribute="centerY" id="ffg-AC-wS7"/>
-                            <constraint firstItem="C6H-DT-9xQ" firstAttribute="centerX" secondItem="G6X-AC-KSw" secondAttribute="centerX" id="ziR-JP-pGs"/>
-                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Featured" image="Featured.png" id="OAA-bm-7OK"/>
                     <connections>
-                        <outlet property="indicator" destination="C6H-DT-9xQ" id="mb8-Du-gyR"/>
+                        <outlet property="tableView" destination="jPw-mt-AXi" id="mrb-Bw-wdK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P9M-hP-lZR" userLabel="First Responder" sceneMemberID="firstResponder"/>
